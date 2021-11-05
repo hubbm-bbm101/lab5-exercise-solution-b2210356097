@@ -8,9 +8,9 @@ __author__ = 'Buğra Kağan Acar'
 def main():
     target: int = random.randint(0, 100)
 
-    # := is the walrus operator, not shown in lectures but it both
-    # assigns and returns the value as an expression.
-    while (guess := int(input('Guess: '))) != target:
+    guess: int = -1  # outside of target range
+    while guess != target:
+        guess: int = int(input('Guess: '))
         verb: str = 'Increase' if target > guess else 'Decrease'
         print(f'{verb} your number!')
 
